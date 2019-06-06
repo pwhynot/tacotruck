@@ -3,14 +3,14 @@ const router = express.Router();
 const taco = require("../models/taco");
 
 router.get("/", function(req, res) {
-    taco.all(function(data) {
-        const hbsObject = {
-            tacos: data
-        };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
-    });
+  taco.all(function(data) {
+    const hbsObject = {
+      tacos: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
   });
+});
 
 router.post("/api/tacos", function(req, res) {
     console.log("test")
@@ -30,7 +30,7 @@ router.put("/api/tacos/:id", function(req, res) {
         taco.update({
            vegatarian: req.body.vegatarian
         }, condition, function(result) {
-          if (result.changedRows == 0) {
+          if (result.changedRows === 0) {
             return res.status(404).end();
           } else {
             res.status(200).end();
@@ -42,7 +42,7 @@ router.delete("/api/tacos/:id", function(req, res) {
     const condition = "id = " + req.params.id;
       
         taco.delete(condition, function(result) {
-          if (result.affectedRows == 0) {
+          if (result.affectedRows === 0) {
             return res.status(404).end();
           } else {
             res.status(200).end();
