@@ -1,0 +1,40 @@
+<h1>WHYNOT'S TACOS</h1>
+
+<ul>
+  {{#each tacos}}
+  <li>
+	<p><span class="label">Taco Name:</span> {{this.taco_name}}</p>
+      <p><span class="label">Vegetarian:</span> {{this.vegetarian}}</p>
+      <p><span class="label">Shell:</span> {{this.shell}}</p>
+
+      <button data-id="{{this.id}}" class="delTaco">Delete</button>
+
+	<button class="pickup-taco" data-id="{{this.id}}">Picked up</button>
+</li>
+
+  {{/each}}
+</ul>
+
+
+<h2>Add a Taco</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="taco">Taco Name:</label>
+    <input type="text" id="taco" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="shell">Shell Type:</label><br>
+    <input type="radio" name="shell" value="Hard" checked> Hard Shell<br>
+    <input type="radio" name="shell" value="Soft">Soft Shell
+  </div>
+
+  <div class="form-group">
+    <label for="veg">Vegetarian?</label><br>
+    <input type="radio" name="veg" value="1" checked> Yes<br>
+    <input type="radio" name="veg" value="0"> No
+  </div>
+
+  <button type="submit">Add Taco</button>
+</form>
