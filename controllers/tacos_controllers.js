@@ -1,6 +1,6 @@
 const express = require ("express");
 const router = express.Router();
-const tacos = require("../models/taco");
+const taco = require("../models/taco");
 
 router.get("/", function(req, res) {
     taco.all(function(data) {
