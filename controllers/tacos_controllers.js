@@ -3,7 +3,7 @@ const router = express.Router();
 const taco = require("../models/taco");
 
 router.get("/", function(req, res) {
-  taco.all(function(data) {
+  taco.selectAll(function(data) {
     const hbsObject = {
       tacos: data
     };
@@ -50,4 +50,5 @@ router.delete("/api/tacos/:id", function(req, res) {
         });
       });
 
-module.exports = router;      
+   
+module.exports = router;

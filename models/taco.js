@@ -1,7 +1,7 @@
 const orm = require("../config/orm");
 
 const taco = {
-    all: function(cb) {
+    selectAll: function(cb) {
       orm.selectAll(function(res) {
         cb(res);
       });
@@ -23,3 +23,5 @@ const taco = {
       });
     }
   };
+
+  module.exports = taco;
